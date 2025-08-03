@@ -1,3 +1,55 @@
-# Hi, I'm Your Name
-
-Template by [lekoarts.de](https://www.lekoarts.de?utm_source=cara&utm_medium=Starter) - I write about JavaScript and React there!
+<>
+  <style>{`
+    @media (max-width: 600px) {
+      .intro-flex {
+        justify-content: center !important;
+      }
+      .intro-img-container {
+        max-width: 180px !important;
+        margin: 1.5rem auto !important;
+      }
+      .intro-img {
+        max-width: 180px !important;
+      }
+    }
+  `}</style>
+  <div
+    class="intro-flex"
+    style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      margin: "3rem 0",
+      flexWrap: "wrap",
+    }}
+  >
+    <div style={{ flex: 1 }}>
+      <h1 style={{ margin: 0, background: "#000", color: "#fff", padding: "0.5rem 1rem", borderRadius: "0.5rem" }}>Hello, I'm Teresa Tavernelli</h1>
+      <h2 style={{ margin: "1rem 0 0 0", background: "#000", color: "#fff", padding: "0.5rem 1rem", borderRadius: "0.5rem" }}>Full Stack Developer</h2>
+    </div>
+    <div style={{ flex: "none", marginLeft: "1rem", marginRight: "20rem", maxWidth: "100%" }}>
+      <div
+        class="intro-img-container"
+        style={{
+          width: "100%",
+          maxWidth: "280px",
+          aspectRatio: "1/1",
+          borderRadius: "50%",
+          border: "12px solid #800080",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          overflow: "hidden",
+          margin: "0 auto",
+        }}
+      >
+        <img
+          class="intro-img"
+          src="image.png"
+          alt="Teresa Tavernelli"
+          style={{ width: "100%", maxWidth: "280px", height: "auto", borderRadius: "50%", display: "block" }}
+        />
+      </div>
+    </div>
+  </div>
+</>
