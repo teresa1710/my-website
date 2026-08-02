@@ -1,0 +1,19 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # Same version the site is developed and built with locally
+        - nvm use 22
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    # Vite output. The old Gatsby build published `public/` instead.
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*

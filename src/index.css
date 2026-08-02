@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Tenor+Sans&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap");
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Every block lifts away from its offset ink shadow on hover */
+.block-shift {
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+.block-shift:hover {
+  transform: translate(-3px, -3px);
+}
+
+.link {
+  transition: opacity 140ms ease;
+}
+.link:hover {
+  opacity: 0.6;
+}
+
+.row {
+  transition: background 140ms ease;
+}
+.row:hover {
+  background: rgb(255 77 157 / 0.28);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #14101a;
+  outline-offset: 3px;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.ticker {
+  animation: scroll-left 28s linear infinite;
+}
+
+/* Riso-style paper grain, multiplied over the whole page */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0.2;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .ticker {
+    animation: none;
+  }
+  .block-shift,
+  .block-shift:hover,
+  .link,
+  .row {
+    transition: none;
+    transform: none;
+  }
+}
