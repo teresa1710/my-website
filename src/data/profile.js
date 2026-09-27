@@ -5,7 +5,7 @@ export const profile = {
   /* Lives in public/, so swap the file and keep the path. */
   photo: "/portrait.png",
   role: "Web developer",
-  location: "Open to relocation",
+  location: "Data Analyst",
   intro:
     "Italian computer scientist with five years building web applications. I specialize in front-end work for dynamic, responsive products, and I'm equally at home in the data layer \u2014 lakes, warehouses and the queries that make them useful.",
   stack: [
@@ -72,19 +72,30 @@ export const profile = {
       ],
     },
   ],
-  education: {
-    degree: "BSc in Computer Science",
-    school: "Universidad Central de Venezuela",
-    period: "2010 — 2018",
-    detail:
-      "Thesis: a business intelligence solution based on a Big Data architecture for the Web Archive of Venezuela.",
-    courses: [
-      "React — Hooks, Router, Redux, Next (Udemy, 2023)",
-      "jQuery: novice to expert (Udemy, 2022)",
-      "Professional Web Design, complete practical course (Udemy, 2020)",
-      "Advanced English — British Council Caracas (2018 — 2023)",
-    ],
-  },
+  /* One entry per degree, most recent first. */
+  education: [
+    {
+      degree: "MSc in Business Analytics",
+      school: "Dublin City University",
+      location: "Dublin, Ireland",
+      period: "2026 — in progress",
+      detail: "",
+    },
+    {
+      degree: "BSc in Computer Science",
+      school: "Universidad Central de Venezuela",
+      location: "",
+      period: "2010 — 2018",
+      detail:
+        "Thesis: a business intelligence solution based on a Big Data architecture for the Web Archive of Venezuela.",
+    },
+  ],
+  courses: [
+    "React — Hooks, Router, Redux, Next (Udemy, 2023)",
+    "jQuery: novice to expert (Udemy, 2022)",
+    "Professional Web Design, complete practical course (Udemy, 2020)",
+    "Advanced English — British Council Caracas (2018 — 2023)",
+  ],
   languages: ["Spanish — native", "English — C2", "Italian"],
   contact: {
     /* `icono` picks the logo drawn in the Logo component below */

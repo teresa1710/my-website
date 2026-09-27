@@ -2,9 +2,41 @@ import { profile } from "../data/profile";
 import { c, body, display, mono } from "../styles/tokens";
 import Label from "./Label";
 
-export default function Education() {
-  const e = profile.education;
+/* One degree, in the left column list. */
+function Degree({ item }) {
+  return (
+    <div className="mb-8 last:mb-0">
+      <h2
+        className="text-2xl sm:text-3xl"
+        style={{
+          fontFamily: display,
+          fontWeight: 800,
+          color: c.ink,
+          letterSpacing: "-0.02em",
+          lineHeight: 1.08,
+        }}
+      >
+        {item.degree}
+      </h2>
+      <p className="mt-2 text-base" style={{ fontFamily: mono, color: c.ink }}>
+        {item.school}
+        {item.location && ` · ${item.location}`}
+        {" · "}
+        {item.period}
+      </p>
+      {item.detail && (
+        <p
+          className="mt-3 text-base"
+          style={{ fontFamily: body, color: c.ink, lineHeight: 1.6 }}
+        >
+          {item.detail}
+        </p>
+      )}
+    </div>
+  );
+}
 
+export default function Education() {
   return (
     <section
       id="education"
@@ -14,29 +46,13 @@ export default function Education() {
       <div className="mx-auto grid max-w-5xl gap-12 sm:grid-cols-12">
         <div className="sm:col-span-5">
           <Label>Education</Label>
-          <h2
-            className="mt-3 text-3xl sm:text-4xl"
-            style={{
-              fontFamily: display,
-              fontWeight: 800,
-              color: c.ink,
-              letterSpacing: "-0.02em",
-              lineHeight: 1.05,
-            }}
-          >
-            {e.degree}
-          </h2>
-          <p className="mt-3 text-base" style={{ fontFamily: mono, color: c.ink }}>
-            {e.school} · {e.period}
-          </p>
-          <p
-            className="mt-4 text-base"
-            style={{ fontFamily: body, color: c.ink, lineHeight: 1.6 }}
-          >
-            {e.detail}
-          </p>
+          <div className="mt-3" style={{ borderTop: `2px solid ${c.ink}`, paddingTop: "1.5rem" }}>
+            {profile.education.map((item) => (
+              <Degree key={item.degree} item={item} />
+            ))}
+          </div>
 
-          <div className="mt-8 flex flex-wrap gap-2">
+          <div className="mt-2 flex flex-wrap gap-2">
             {profile.languages.map((language) => (
               <span
                 key={language}
@@ -57,7 +73,7 @@ export default function Education() {
         <div className="sm:col-span-7">
           <Label>Courses</Label>
           <ul className="mt-5" style={{ borderTop: `2px solid ${c.ink}` }}>
-            {e.courses.map((course) => (
+            {profile.courses.map((course) => (
               <li
                 key={course}
                 className="row py-4 text-base"
