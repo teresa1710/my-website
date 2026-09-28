@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { c, body, offset } from "../styles/tokens";
 
-/* Presses into its own ink shadow on mousedown, like a stamp. */
-export default function Button({ children, href, background }) {
+/* Presses into its own ink shadow on mousedown, like a stamp.
+   Pass `download` to trigger a file download instead of navigating. */
+export default function Button({ children, href, background, download }) {
   const [pressed, setPressed] = useState(false);
 
   return (
     <a
       href={href}
+      download={download}
       onMouseDown={() => setPressed(true)}
       onMouseUp={() => setPressed(false)}
       onMouseLeave={() => setPressed(false)}

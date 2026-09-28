@@ -63,6 +63,9 @@ export default function Hero() {
           <Button href="#contact" background={c.paperLight}>
             Get in touch
           </Button>
+          <Button href={profile.resumeUrl} background={c.lilacMid} download>
+            Download CV
+          </Button>
         </div>
       </div>
     </section>

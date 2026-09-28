@@ -2,7 +2,8 @@
 
 export const profile = {
   name: "Teresa Tavernelli",
-  /* Lives in public/, so swap the file and keep the path. */
+  /* Both live in public/, so swap the files and keep these paths. */
+  resumeUrl: "/resume-teresa-tavernelli.pdf",
   photo: "/portrait.png",
   role: "Web developer",
   location: "Data Analyst",
