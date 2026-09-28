@@ -47,18 +47,21 @@ export default function ShippedCard({ item, ink }) {
         ))}
       </div>
 
-      <a
-        href={item.url}
-        className="link mt-5 self-start text-sm uppercase"
-        style={{
-          fontFamily: mono,
-          letterSpacing: "0.14em",
-          color: c.ink,
-          borderBottom: `2px solid ${ink.strong}`,
-        }}
-      >
-        View project →
-      </a>
+      {/* Only rendered when the project has a real url to point to */}
+      {item.url && (
+        <a
+          href={item.url}
+          className="link mt-5 self-start text-sm uppercase"
+          style={{
+            fontFamily: mono,
+            letterSpacing: "0.14em",
+            color: c.ink,
+            borderBottom: `2px solid ${ink.strong}`,
+          }}
+        >
+          View project →
+        </a>
+      )}
     </article>
   );
 }

@@ -60,14 +60,15 @@ export const profile = {
           blurb:
             "Built from scratch: AdobeXD for design, HTML and CSS for structure and styling, Bootstrap for responsive layout.",
           tags: ["HTML/CSS", "Bootstrap", "AdobeXD"],
-          url: "#",
+          /* No live url — leave empty and the "View project" link is skipped */
+          url: "",
         },
         {
           name: "Tecnicargo Web",
           blurb:
             "Second site for the same group, with jQuery driving the interactive pieces and a tighter turnaround.",
           tags: ["jQuery", "HTML/CSS", "Responsive"],
-          url: "#",
+          url: "",
         },
       ],
     },
